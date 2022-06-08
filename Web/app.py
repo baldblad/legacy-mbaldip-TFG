@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # Declare a Flask app
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
 
 
 # Main function here

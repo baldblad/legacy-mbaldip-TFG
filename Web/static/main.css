@@ -1,6 +1,6 @@
 html {
   /*Urls are relative to the css file*/
-  background: url('/images/trees_background.jpg') no-repeat center fixed; 
+  background: url(images/trees_background.jpg) no-repeat center fixed; 
   background-size: cover;
 }
 
