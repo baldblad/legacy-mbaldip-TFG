@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Main function here
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 # Running the app
 if __name__ == '__main__':
