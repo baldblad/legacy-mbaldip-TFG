@@ -10,8 +10,17 @@ app = Flask(__name__)
 
 # Main function here
 @app.route('/')
-def index():
+@app.route('/home')
+def home():
     return render_template('home.html')
+
+@app.route('/wordclouds')
+def wordclouds():
+    return render_template('wordclouds.html')
+
+@app.route('/news')
+def news():
+    return render_template('news.html')
 
 # Running the app
 if __name__ == '__main__':
