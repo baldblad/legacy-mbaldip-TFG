@@ -11,30 +11,32 @@
 <header class="site-header">
   <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
     <div class="container">
-      <a class="navbar-brand mr-4" href="/">Flask Blog</a>
+      <a class="navbar-brand"><strong>SDGtracker</strong></a>
       <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarToggle"
-        aria-controls="navbarToggle"
+        data-target="#navbarSupportedContent-7"
+        aria-controls="navbarSupportedContent-7"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarToggle">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="{{ url_for('home')}}"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{{ url_for('wordclouds')}}"
+              >Word clouds</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
+            <a class="nav-link">What's on Twitter</a>
           </li>
         </ul>
       </div>
