@@ -44,4 +44,17 @@
   </nav>
 </header>
 <!-- subpages header-->
-hi there {% endblock%}
+
+<!-- publish tweet-->
+{% for link in tweet_links %}
+
+<div class="content-section">
+  <blockquote class="twitter-tweet">
+    <a href="{{link}}"></a>
+  </blockquote>
+</div>
+{% endfor %}
+
+<!-- publish tweet-->
+
+{% endblock%}

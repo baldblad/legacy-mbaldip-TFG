@@ -1,6 +1,7 @@
 
 from flask import Flask, request, render_template, url_for
 import pandas as pd
+import requests
 #import joblib
 
 
@@ -20,7 +21,13 @@ def wordclouds():
 
 @app.route('/news')
 def news():
-    return render_template('news.html')
+    # Lets do some crazy stuff:
+    tweets = [807811447862468608]
+    tweet_links= []
+    for tweet in tweets:
+        tweet_links.append('https://twitter.com/x/status/'+str(tweet))
+
+    return render_template('news.html',tweet_links=tweet_links)
 
 # Running the app
 if __name__ == '__main__':
