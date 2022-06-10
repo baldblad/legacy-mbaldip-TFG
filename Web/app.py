@@ -22,7 +22,7 @@ def wordclouds():
 @app.route('/news')
 def news():
     # Lets do some crazy stuff:
-    tweets = [807811447862468608]
+    tweets = [1534897204934189058]
     tweet_links= []
     for tweet in tweets:
         tweet_links.append('https://twitter.com/x/status/'+str(tweet))
