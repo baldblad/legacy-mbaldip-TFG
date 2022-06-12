@@ -1,7 +1,7 @@
 
 from flask import Flask, request, render_template, url_for
-import pandas as pd
 import requests
+import models
 #import joblib
 
 
@@ -19,13 +19,19 @@ def home():
 def wordclouds():
     return render_template('wordclouds.html')
 
-@app.route('/news')
+@app.route('/news', methods=['GET', 'POST'])
 def news():
     # Lets do some crazy stuff:
-    tweets = [1534897204934189058]
     tweet_links= []
-    for tweet in tweets:
-        tweet_links.append('https://twitter.com/x/status/'+str(tweet))
+    # If a form is submitted
+    if request.method == "POST":
+        
+        selAuth = request.form.get('selAuth')
+        # TODO: request filtered data in database
+        tweets = [1535293461594767360]
+        
+        for tweet in tweets:
+            tweet_links.append('https://twitter.com/x/status/'+str(tweet))
 
     return render_template('news.html',tweet_links=tweet_links)
 

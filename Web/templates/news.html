@@ -1,59 +1,34 @@
-{% extends 'base.html' %} {% block head %}
-<!-- Using custom css:-->
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='/subsite.css') }}"
-/>
-<!-- Using custom css:-->
+{% extends 'news_base.html' %} {% block menu_subsite %}
+<!-- TODO-->
+{% endblock %}{% block main %}
 
-{% endblock %} {% block body%}
-<!-- subpages header-->
-<header class="site-header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-    <div class="container">
-      <a class="navbar-brand"><strong>SDGtracker</strong></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent-7"
-        aria-controls="navbarSupportedContent-7"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+<!-- tweet feed -->
+<div class="col text-center">
+  <h2>Filter the tweet content</h2>
+  <form name="form" , method="POST" , style="text-align: center">
+    <div class="form-group">
+      <label for="sel2"
+        >Mutiple select list (hold shift to select more than one):</label
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('home')}}"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('wordclouds')}}"
-              >Word clouds</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">What's on Twitter</a>
-          </li>
-        </ul>
-      </div>
+      <select multiple class="form-control" id="sel2" name="selAuth">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
     </div>
-  </nav>
-</header>
-<!-- subpages header-->
+    <button class="btn btn-primary" value="Submit">Filter</button>
+  </form>
 
-<!-- publish tweet-->
-{% for link in tweet_links %}
+  {% for link in tweet_links %}
+  <blockquote class="twitter-tweet align-center">
+    <a href="{{link}}"></a>
+  </blockquote>
+  {% endfor %}
+</div>
+<!-- tweet feed -->
 
-<blockquote class="twitter-tweet align-center">
-  <a href="{{link}}"></a>
-</blockquote>
-
-{% endfor %}
-
-<!-- publish tweet-->
+<!-- main section-->
 
 {% endblock%}
