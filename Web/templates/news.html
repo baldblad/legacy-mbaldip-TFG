@@ -1,8 +1,45 @@
-{% extends 'news_base.html' %} {% block menu_subsite %}
-<!-- TODO-->
-{% endblock %}{% block main %}
+{% extends 'subsite_base.html' %}
+<!--{% block menu_subsite %}
+<!-- menu for histograms-->
 
-<!-- tweet feed -->
+<!-- menu for histograms-->
+<!--{% endblock %} -->
+{% block subsite_main %}
+
+<div class="row">
+  <div class="col-4">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#hist">Histograms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#tweets">Tweets</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Histograms content -->
+      <div class="tab-pane container active" id="hist">
+        {% for key,value in authorities.iterrows() %}
+        <div class="form-check">
+          <label class="form-check-label">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              value="{{value}}"
+            />{{key}}
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- Tweets content -->
+      <div class="tab-pane container fade" id="tweets">...</div>
+    </div>
+  </div>
+</div>
+<!-- tweet feed 
 <div class="col text-center">
   <h2>Filter the tweet content</h2>
   <form name="form" , method="POST" , style="text-align: center">

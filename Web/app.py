@@ -19,9 +19,12 @@ def home():
 def wordclouds():
     return render_template('wordclouds.html')
 
-@app.route('/news', methods=['GET', 'POST'])
+
+@app.route('/news',methods=['GET', 'POST'])
+#@app.route('/news/histograms', methods=['GET', 'POST'])
 def news():
     # Lets do some crazy stuff:
+    top25 = models.getTop25()
     tweet_links= []
     # If a form is submitted
     if request.method == "POST":
@@ -33,7 +36,9 @@ def news():
         for tweet in tweets:
             tweet_links.append('https://twitter.com/x/status/'+str(tweet))
 
-    return render_template('news.html',tweet_links=tweet_links)
+    return render_template('news.html', tweet_links=tweet_links,
+                                        authorities=top25)
+
 
 # Running the app
 if __name__ == '__main__':
