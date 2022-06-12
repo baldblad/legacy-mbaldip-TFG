@@ -25,23 +25,25 @@ def wordclouds():
 def news():
     # Lets do some crazy stuff:
     top25 = models.getTop25()
-    tweet_links= []
+    
     # If a form is submitted
     if request.method == "POST":
 
         # gives the list of ids for the checked boxes with twitter account usernames
-        selAuth = request.form.getlist('histCheckbox')
-        # TODO: request filtered data in database
-        tweets = [1535293461594767360]
+        selAuth_hist = request.form.getlist('histCheckbox')
+        selAuth_tweets = request.form.getlist('tweetsCheckbox')
         
-        for tweet in tweets:
-            tweet_links.append('https://twitter.com/x/status/'+str(tweet))
+        # request filtered data in database
+        tweet_links = models.getFilteredTweets(selAuth_tweets)
+        
     else:
-        
-        selAuth =[]
+        tweet_links= []
+        selAuth_tweets =[]
+        selAuth_hist =[]
     return render_template('news.html', tweet_links=tweet_links,
                                         authorities=top25,
-                                        selAuth=selAuth)
+                                        selAuth_hist=selAuth_hist,
+                                        selAuth_tweets=selAuth_tweets)
 
 
 # Running the app
