@@ -1,71 +1,72 @@
-{% extends 'subsite_base.html' %}
-<!--{% block menu_subsite %}
-<!-- menu for histograms-->
+{% extends 'subsite_base.html' %} {% block subsite_main %}
 
-<!-- menu for histograms-->
-<!--{% endblock %} -->
-{% block subsite_main %}
-
+<h2>Filter by:</h2>
 <div class="row">
-  <div class="col-4">
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#hist">Histograms</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#tweets">Tweets</a>
-      </li>
-    </ul>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#hist">Histograms</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#tweets">Tweets</a>
+    </li>
+  </ul>
+</div>
 
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Histograms content -->
-      <div class="tab-pane container active" id="hist">
-        {% for key,value in authorities.iterrows() %}
-        <div class="form-check">
-          <label class="form-check-label">
+<!-- Tab panes -->
+<div class="tab-content">
+  <!-- Histograms section -->
+  <div class="tab-pane container active" id="hist">
+    <div class="row">
+      <div class="col-4">
+        <form method="post">
+          {% for key,value in authorities.iterrows() %}
+          <div class="form-check">
             <input
               type="checkbox"
               class="form-check-input"
-              value="{{value}}"
+              name="histCheckbox"
+              value="{{value['uid']}}"
             />{{key}}
-          </label>
-        </div>
-        {% endfor %}
+          </div>
+          {% endfor %}
+          <button class="btn btn-primary" value="Submit">Filter</button>
+        </form>
       </div>
-      <!-- Tweets content -->
-      <div class="tab-pane container fade" id="tweets">...</div>
+      <!-- Content for histograms -->
+      <div class="col-8">{% for id in selAuth %} {{id}} {% endfor %}</div>
+    </div>
+  </div>
+  <!-- Histograms section -->
+
+  <!-- Tweets form -->
+  <div class="tab-pane container fade" id="tweets">
+    <div class="row">
+      <div class="col-4">
+        <form method="post">
+          {% for key,value in authorities.iterrows() %}
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="tweetsCheckbox"
+              value="{{value['uid']}}"
+            />{{key}}
+          </div>
+          {% endfor %}
+          <button class="btn btn-primary" value="Submit">Filter</button>
+        </form>
+      </div>
+      <!-- Right panel -->
+      <div class="col-8">
+        <div class="tab-content">
+          <!-- Content for tweets -->
+          This is tweets baby!
+        </div>
+      </div>
+      <!-- Right panel -->
     </div>
   </div>
 </div>
-<!-- tweet feed 
-<div class="col text-center">
-  <h2>Filter the tweet content</h2>
-  <form name="form" , method="POST" , style="text-align: center">
-    <div class="form-group">
-      <label for="sel2"
-        >Mutiple select list (hold shift to select more than one):</label
-      >
-      <select multiple class="form-control" id="sel2" name="selAuth">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
-    <button class="btn btn-primary" value="Submit">Filter</button>
-  </form>
-
-  {% for link in tweet_links %}
-  <blockquote class="twitter-tweet align-center">
-    <a href="{{link}}"></a>
-  </blockquote>
-  {% endfor %}
-</div>
-<!-- tweet feed -->
-
-<!-- main section-->
 
 {% endblock%}

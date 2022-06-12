@@ -28,16 +28,20 @@ def news():
     tweet_links= []
     # If a form is submitted
     if request.method == "POST":
-        
-        selAuth = request.form.get('selAuth')
+
+        # gives the list of ids for the checked boxes with twitter account usernames
+        selAuth = request.form.getlist('histCheckbox')
         # TODO: request filtered data in database
         tweets = [1535293461594767360]
         
         for tweet in tweets:
             tweet_links.append('https://twitter.com/x/status/'+str(tweet))
-
+    else:
+        
+        selAuth =[]
     return render_template('news.html', tweet_links=tweet_links,
-                                        authorities=top25)
+                                        authorities=top25,
+                                        selAuth=selAuth)
 
 
 # Running the app
