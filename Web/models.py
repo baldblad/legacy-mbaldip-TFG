@@ -1,5 +1,9 @@
 import pandas as pd
 
+# Database management:
+# initialize databases:
+
+
 
 # return a dataframe of authority objects username:twid (key:value)
 def getTop25():

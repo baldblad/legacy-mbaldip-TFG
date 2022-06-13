@@ -9,6 +9,11 @@ import models
 app = Flask(__name__)
 
 
+# initialize database
+@app.before_first_request()
+def initialize_databases():
+    return
+
 # Main function here
 @app.route('/')
 @app.route('/home')
