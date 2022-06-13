@@ -2,18 +2,30 @@
 from flask import Flask, request, render_template, url_for
 import requests
 import models
+from flask_sqlalchemy import SQLAlchemy
 #import joblib
 
 
 # Declare a Flask app
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/webDB.db'
+db = SQLAlchemy(app)
+
+class Tweet(db.Model):
+    id = db.Column(db.BigInteger, primary_key=True)
+    auth_id = db.Column(db.Integer, nullable=False)
+    tag = db.Column(db.Integer, nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False)
+
+    def __repr__(self):
+        return "Tweet({}, {}, {})".format(self.id, self.auth_id, self.tag)
 
 
-# initialize database
+'''# initialize database
 @app.before_first_request()
 def initialize_databases():
     return
-
+'''
 # Main function here
 @app.route('/')
 @app.route('/home')
