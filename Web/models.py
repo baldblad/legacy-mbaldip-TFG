@@ -14,7 +14,7 @@ def getTop25():
 
 # return whatever, I'm gonna change my mind in 5 minutes
 def tweet_links_parse(tweets):
-    '''
-    for tweet in tweets:
-            tweet_links.append('https://twitter.com/x/status/'+str(tweet))'''
-    return
+    tweet_links=[]
+    for tweet in tweets.items():
+            tweet_links.append('https://twitter.com/x/status/'+str(tweet))
+    return tweet_links

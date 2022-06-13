@@ -45,7 +45,7 @@ def news():
     
     # variable declaration:
     tweet_links= []
-    selAuth_tweets =[]
+    selSDG_tweets =[]
     selAuth_hist =[]
     tweets = []
     tab = 'hist' # default tab
@@ -57,20 +57,24 @@ def news():
             selAuth_hist = request.form.getlist('histCheckbox')
             tab = 'hist'
         if 'tweetsCheckbox' in request.form:
-            selAuth_tweets = request.form.getlist('tweetsCheckbox')
+            selSDG_tweets = request.form.getlist('tweetsCheckbox')
             tab='tweets'
-        
+            print(selSDG_tweets[0])
             # request filtered data in database
             page = request.args.get('page', 1, type=int)
             #filter(Tweet.auth_id._in(selAuth_tweets))
-            tweets = Tweet.query.order_by(Tweet.created_at.desc())\
-                                    .paginate(page=page, per_page=3)
-            tweet_links = models.tweet_links_parse(tweets)
+            tweets = Tweet.query.filter_by(tag=selSDG_tweets[0]).paginate(page=page, per_page=3)
+
+            print(tweets)
+            #tweet_links=["https://twitter.com/x/status/807811447862468608",
+                       # "https://twitter.com/x/status/807811447862468608" ]
+            #tweet_links = models.tweet_links_parse(tweets) # not used Nor tested
 
     return render_template('news.html', tweet_links=tweet_links,
                                         authorities=top25,
+                                        SDGs=[i for i in range(1,18)],
                                         selAuth_hist=selAuth_hist,
-                                        selAuth_tweets=selAuth_tweets,
+                                        selAuth_tweets=selSDG_tweets,
                                         tweets=tweets,
                                         tab=tab)
 
