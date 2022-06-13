@@ -1,76 +1,101 @@
 {% extends 'subsite_base.html' %} {% block subsite_main %}
-
-<h2>Filter by:</h2>
-<div class="row">
+<div class="container">
   <!-- Nav tabs -->
   <ul class="nav nav-tabs">
     <li class="nav-item">
+      {% if tab=='hist' %}
       <a class="nav-link active" data-toggle="tab" href="#hist">Histograms</a>
+      {% else %}
+      <a class="nav-link" data-toggle="tab" href="#hist">Histograms</a>
+      {% endif %}
     </li>
     <li class="nav-item">
+      {% if tab=='tweets' %}
+      <a class="nav-link active" data-toggle="tab" href="#tweets">Tweets</a>
+      {% else %}
       <a class="nav-link" data-toggle="tab" href="#tweets">Tweets</a>
+      {% endif %}
     </li>
   </ul>
 </div>
+<div class="container">
+  <!-- Tab panes -->
+  <div class="tab-content content-section">
+    <!-- Histograms section -->
 
-<!-- Tab panes -->
-<div class="tab-content">
-  <!-- Histograms section -->
-  <div class="tab-pane container active" id="hist">
-    <div class="row">
-      <div class="col-4">
-        <form method="post">
-          {% for key,value in authorities.iterrows() %}
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              name="histCheckbox"
-              value="{{value['uid']}}"
-            />{{key}}
+    {% if tab=='hist' %}
+    <div class="tab-pane container active" id="hist">
+      {% else %}
+      <div class="tab-pane container fade" id="hist">
+        {% endif %}
+        <div class="row">
+          <div class="col-sm-4">
+            <form method="post">
+              {% for key,value in authorities.iterrows() %}
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="histCheckbox"
+                  value="{{value['uid']}}"
+                />{{key}}
+              </div>
+              {% endfor %}
+              <button class="btn btn-primary" value="Submit">Filter</button>
+            </form>
           </div>
-          {% endfor %}
-          <button class="btn btn-primary" value="Submit">Filter</button>
-        </form>
-      </div>
-      <!-- Content for histograms -->
-      <div class="col-8">{% for id in selAuth_hist %} {{id}} {% endfor %}</div>
-    </div>
-  </div>
-  <!-- Histograms section -->
-
-  <!-- Tweets form -->
-  <div class="tab-pane container fade" id="tweets">
-    <div class="row">
-      <div class="col-4">
-        <form method="post">
-          {% for key,value in authorities.iterrows() %}
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              name="tweetsCheckbox"
-              value="{{value['uid']}}"
-            />{{key}}
+          <!-- Content for histograms -->
+          <div class="col-sm-8">
+            histograms:{% for id in selAuth_hist %} {{id}} {% endfor %}
           </div>
-          {% endfor %}
-          <button class="btn btn-primary" value="Submit">Filter</button>
-        </form>
-      </div>
-      <!-- Right panel -->
-      <div class="col-8">
-        <div class="tab-content">
-          <!-- Content for tweets 
-          This is tweets baby!
-          <blockquote class="twitter-tweet">
-            <a href="https://twitter.com/x/status/807811447862468608"></a> 
-          </blockquote>
-          <!-- Content for tweets -->
         </div>
       </div>
-      <!-- Right panel -->
+      <!-- Histograms section -->
+
+      <!-- Tweets form -->
+      {% if tab=='tweets' %}
+      <div class="tab-pane container active" id="tweets">
+        {% else %}
+        <div class="tab-pane container fade" id="tweets">
+          {% endif %}
+
+          <div class="row">
+            <div class="col-sm-4">
+              <form method="post">
+                {% for key,value in authorities.iterrows() %}
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="tweetsCheckbox"
+                    value="{{value['uid']}}"
+                  />{{key}}
+                </div>
+                {% endfor %}
+                <button class="btn btn-primary" value="Submit">Filter</button>
+              </form>
+            </div>
+            <!-- Right panel -->
+            <div class="col-sm-8">
+              <blockquote class="twitter-tweet tw-align-center">
+                <a href="https://twitter.com/x/status/807811447862468608"></a>
+              </blockquote>
+
+              <blockquote class="twitter-tweet tw-align-center">
+                <a href="https://twitter.com/x/status/807811447862468608"></a>
+              </blockquote>
+
+              <!-- Content for tweets -->
+              <!--{% for tweet in tweets.items %}-->
+
+              <!--{% endfor %}-->
+              <!-- Content for tweets -->
+            </div>
+            <!-- Right panel -->
+          </div>
+        </div>
+      </div>
     </div>
+    {% endblock%}
   </div>
 </div>
-
-{% endblock%}
