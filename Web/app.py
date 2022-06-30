@@ -1,6 +1,6 @@
 
 from flask import Flask, request, render_template, session, url_for
-import requests
+#import requests
 import models
 from flask_sqlalchemy import SQLAlchemy
 #import joblib
