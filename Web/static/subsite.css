@@ -1,5 +1,9 @@
 body {
-  background: #d9e7d5;
+  background-image: url(/static/images/windmills_background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   color: #333333;
   margin-top: 5rem;
 }
@@ -13,16 +17,22 @@ h6 {
   color: #444444;
 }
 
+p,
+text {
+  color: white;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+  transition: 0.5s;
+}
+
+.navbar:not(.top-nav-collapse).scrolled {
+  background: rgb(93, 131, 161) !important;
+}
+
 .bg-steel {
   background-color: #103a27;
-}
-
-.site-header .navbar-nav .nav-link {
-  color: #a6bba8;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -33,6 +43,13 @@ h6 {
   background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
-  border-radius: 3px;
+  border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: rgb(93, 131, 161) !important;
+}
+.nav-pills .nav-link {
+  color: #444444;
 }

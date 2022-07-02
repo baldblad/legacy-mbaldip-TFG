@@ -7,9 +7,10 @@
 <!-- Using custom css:-->
 
 {% endblock %} {% block body%}
+
 <!-- subpages header-->
 <header class="site-header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+  <nav class="navbar navbar-expand-md navbar-light bg-steel fixed-top">
     <div class="container">
       <a class="navbar-brand"><strong>SDGeye</strong></a>
       <button
@@ -45,7 +46,16 @@
     </div>
   </nav>
 </header>
+
 <!-- subpages header-->
 
 <!-- subpages main-->
-{% block subsite_main %}{% endblock%} {% endblock%}
+<div class="view">{% block subsite_main %}{% endblock%}</div>
+<!-- navbar transparent to solid on scroll -->
+<script>
+  $(window).scroll(function () {
+    $("nav").toggleClass("scrolled", $(this).scrollTop() > 100);
+  });
+</script>
+
+{% endblock%}
