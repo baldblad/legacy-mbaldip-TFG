@@ -1,19 +1,19 @@
 {% extends 'subsite_base.html' %} {% block subsite_main %}
 <div class="container">
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs">
+  <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
       {% if tab=='hist' %}
-      <a class="nav-link active" data-toggle="tab" href="#hist">Accounts</a>
+      <a class="nav-link active" data-bs-toggle="tab" href="#hist">Accounts</a>
       {% else %}
-      <a class="nav-link" data-toggle="tab" href="#hist">Accounts</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#hist">Accounts</a>
       {% endif %}
     </li>
     <li class="nav-item">
       {% if tab=='tweets' %}
-      <a class="nav-link active" data-toggle="tab" href="#tweets">Tweets</a>
+      <a class="nav-link active" data-bs-toggle="tab" href="#tweets">Tweets</a>
       {% else %}
-      <a class="nav-link" data-toggle="tab" href="#tweets">Tweets</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#tweets">Tweets</a>
       {% endif %}
     </li>
   </ul>

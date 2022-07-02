@@ -1,2 +1,68 @@
-{% extends 'subsite_base.html' %} {% block subsite %} Wordclouds yayyy! {%
-endblock %}
+{% extends 'subsite_base.html' %} {% block subsite_main %}
+<div class="row">
+  <!--left pannel-->
+  <div class="col-sm-6">Whatt</div>
+  <!--right pannel-->
+  <div class="col-sm-6">
+    <div id="wc" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#wc"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#wc"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#wc"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="/static/images/wc1.png" alt="SDG1" />
+          <!--width="1100" height="500"-->
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="/static/images/wc2.png" alt="SDG2" />
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="/static/images/wc3.png" alt="SDG3" />
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#wc"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#wc"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
