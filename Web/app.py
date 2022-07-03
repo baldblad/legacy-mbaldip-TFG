@@ -38,18 +38,18 @@ def wordclouds():
     return render_template('wordclouds.html')
 
 
-@app.route('/news',methods=['GET', 'POST'])
+
 #@app.route('/news/histograms', methods=['GET', 'POST'])
-def news():
+@app.route('/news',methods=['GET', 'POST'])
+def news(tab='tweets', page=1, selSDG_tweets=None):
     # Lets do some crazy stuff:
     top25 = models.getTop25()
     
     # variable declaration:
     tweet_links= []
-    selSDG_tweets =[]
     selAuth_hist =[]
-    tweets = []
-    tab = 'hist' # default tab
+    tweets = None
+    #tab = 'hist' # default tab
 
     # Update database if it's needed:
     db_updated = models.updateDatabase(Tweet, db, top25)
@@ -60,20 +60,20 @@ def news():
     if request.method == "POST":
         
         if 'histCheckbox' in request.form:
-            selAuth_hist = request.form.getlist('histCheckbox')
+            selAuth_hist = request.form.get('histCheckbox')
             tab = 'hist'
         if 'tweetsCheckbox' in request.form:
-            selSDG_tweets = request.form.getlist('tweetsCheckbox')
+            selSDG_tweets = request.form.get('tweetsCheckbox')
             tab='tweets'
-            print(selSDG_tweets[0])
-            # request filtered data in database
-            page = request.args.get('page', 1, type=int)
-            #filter(Tweet.auth_id._in(selAuth_tweets))
-            tweets = Tweet.query.filter_by(tag=selSDG_tweets[0]).paginate(page=page, per_page=3)
 
-            #tweet_links=["https://twitter.com/x/status/807811447862468608",
-                       # "https://twitter.com/x/status/807811447862468608" ]
-            #tweet_links = models.tweet_links_parse(tweets) # not used Nor tested
+    page = request.args.get('page', 1, type=int)
+    selSDG_tweets = request.args.get('selSDG_tweets', None, type=int)
+
+    #filter(Tweet.auth_id._in(selAuth_tweets))
+    try:
+        tweets = Tweet.query.filter_by(tag=selSDG_tweets).paginate(page=page, per_page=5)
+    except:
+        tweets = None
 
     return render_template('news.html', tweet_links=tweet_links,
                                         authorities=top25,

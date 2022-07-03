@@ -67,7 +67,7 @@
                 {% for SDG in SDGs %}
                 <div class="form-check">
                   <input
-                    type="checkbox"
+                    type="radio"
                     class="form-check-input"
                     name="tweetsCheckbox"
                     value="{{SDG}}"
@@ -81,16 +81,23 @@
             </div>
             <!-- Right panel -->
             <div class="col-sm-8">
-              {% for tweet in tweets.items %}
+              <!-- Content for tweets -->
+              {% if tweets %} {% for tweet in tweets.items %}
               <blockquote class="twitter-tweet tw-align-center">
                 <a href="https://twitter.com/x/status/{{tweet.id}}"></a>
               </blockquote>
               {% endfor %}
-              <!-- Content for tweets -->
-              <!--{% for tweet in tweets.items %}-->
-
-              <!--{% endfor %}-->
-              <!-- Content for tweets -->
+              <!-- Pagination -->
+              <div>
+                {% for page_num in tweets.iter_pages() %} {% if page_num %}
+                <a
+                  class="btn-outline-secondary mb-4"
+                  href="{{ url_for('news', tab='tweets', page=page_num, selSDG_tweets=selAuth_tweets) }}"
+                >
+                  {{page_num}}</a
+                >
+                {% else %} ... {% endif %} {% endfor %} {% endif %}
+              </div>
             </div>
             <!-- Right panel -->
           </div>
