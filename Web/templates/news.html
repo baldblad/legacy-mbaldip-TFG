@@ -82,22 +82,30 @@
             <!-- Right panel -->
             <div class="col-sm-8">
               <!-- Content for tweets -->
-              {% if tweets %} {% for tweet in tweets.items %}
+              {% if tweets.total > 0 %}
+              <h2>Tweets on SDG{{selAuth_tweets}} ({{tweets.total}})</h2>
+              {% endif %} {% for tweet in tweets.items %}
               <blockquote class="twitter-tweet tw-align-center">
                 <a href="https://twitter.com/x/status/{{tweet.id}}"></a>
               </blockquote>
               {% endfor %}
               <!-- Pagination -->
-              <div>
-                {% for page_num in tweets.iter_pages() %} {% if page_num %}
-                <a
-                  class="btn-outline-secondary mb-4"
-                  href="{{ url_for('news', tab='tweets', page=page_num, selSDG_tweets=selAuth_tweets) }}"
-                >
-                  {{page_num}}</a
-                >
-                {% else %} ... {% endif %} {% endfor %} {% endif %}
-              </div>
+              {% for page_num in tweets.iter_pages(left_edge=1, right_edge=1,
+              left_current=1, right_current=2) %} {% if page_num %} {% if
+              tweets.page == page_num %}
+              <a
+                class="btn btn-secondary mb-4"
+                href="{{ url_for('news', tab='tweets', page=page_num, selSDG_tweets=selAuth_tweets) }}"
+              >
+                {{page_num}}</a
+              >{% else %}
+              <a
+                class="btn btn-outline-secondary mb-4"
+                href="{{ url_for('news', tab='tweets', page=page_num, selSDG_tweets=selAuth_tweets) }}"
+              >
+                {{page_num}}</a
+              >{% endif %} {% else %} ... {% endif %} {% endfor %}
+              <!-- Pagination -->
             </div>
             <!-- Right panel -->
           </div>

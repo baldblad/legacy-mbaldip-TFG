@@ -56,6 +56,10 @@ def news(tab='tweets', page=1, selSDG_tweets=None):
     if db_updated:
         print('Database upfated successfully')
 
+
+    page = request.args.get('page', 1, type=int)
+    selSDG_tweets = request.args.get('selSDG_tweets', None, type=int)
+
     # If a form is submitted
     if request.method == "POST":
         
@@ -65,9 +69,6 @@ def news(tab='tweets', page=1, selSDG_tweets=None):
         if 'tweetsCheckbox' in request.form:
             selSDG_tweets = request.form.get('tweetsCheckbox')
             tab='tweets'
-
-    page = request.args.get('page', 1, type=int)
-    selSDG_tweets = request.args.get('selSDG_tweets', None, type=int)
 
     #filter(Tweet.auth_id._in(selAuth_tweets))
     try:
