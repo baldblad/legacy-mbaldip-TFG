@@ -34,14 +34,16 @@
               {% for key,value in authorities.iterrows() %}
               <div class="form-check">
                 <input
-                  type="checkbox"
+                  type="radio"
                   class="form-check-input"
                   name="histCheckbox"
-                  value="{{value['uid']}}"
+                  id="{{value['uid']}}"
                 />{{key}}
               </div>
               {% endfor %}
-              <button class="btn btn-primary" value="Submit">Filter</button>
+              <button class="btn btn-outline-secondary" value="Submit">
+                Filter
+              </button>
             </form>
           </div>
           <!-- Content for histograms -->
@@ -72,7 +74,9 @@
                   />#SDG{{SDG}}
                 </div>
                 {% endfor %}
-                <button class="btn btn-primary" value="Submit">Filter</button>
+                <button class="btn btn-outline-secondary" value="Submit">
+                  Filter
+                </button>
               </form>
             </div>
             <!-- Right panel -->
