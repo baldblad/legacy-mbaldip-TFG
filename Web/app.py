@@ -9,6 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 # Declare a Flask app
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/webDB.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Tweet(db.Model):
@@ -18,7 +19,7 @@ class Tweet(db.Model):
     created_at = db.Column(db.DateTime, nullable=False)
 
     def __repr__(self):
-        return "Tweet({}, {}, {})".format(self.id, self.auth_id, self.tag)
+        return "Tweet({}, {}, {}, {})".format(self.id, self.auth_id, self.tag, self.created_at)
 
 
 '''# initialize database
@@ -50,6 +51,11 @@ def news():
     tweets = []
     tab = 'hist' # default tab
 
+    # Update database if it's needed:
+    db_updated = models.updateDatabase(Tweet, db, top25)
+    if db_updated:
+        print('Database upfated successfully')
+
     # If a form is submitted
     if request.method == "POST":
         
@@ -65,7 +71,6 @@ def news():
             #filter(Tweet.auth_id._in(selAuth_tweets))
             tweets = Tweet.query.filter_by(tag=selSDG_tweets[0]).paginate(page=page, per_page=3)
 
-            print(tweets)
             #tweet_links=["https://twitter.com/x/status/807811447862468608",
                        # "https://twitter.com/x/status/807811447862468608" ]
             #tweet_links = models.tweet_links_parse(tweets) # not used Nor tested
