@@ -1,68 +1,504 @@
 {% extends 'subsite_base.html' %} {% block subsite_main %}
-<div class="row">
-  <!--left pannel-->
-  <div class="col-sm-6">Whatt</div>
-  <!--right pannel-->
-  <div class="col-sm-6">
-    <div id="wc" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <!-- Indicators -->
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#wc"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#wc"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#wc"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <!--left pannel-->
+    <div class="col-sm-6 text-center">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne"
+              aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseOne"
+            >
+              Goal #1
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingOne"
+          >
+            <div class="accordion-body">
+              <strong>No Poverty</strong>
+              End poverty in all its forms everywhere.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTwo"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTwo"
+            >
+              Goal #2
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingTwo"
+          >
+            <div class="accordion-body">
+              <strong>Zero Hunger</strong>
+              End hunger, achieve food security and improved nutrition and
+              promote sustainable agriculture.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #3
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Good Health and Well-Being</strong>
+              Ensure healthy lives and promote well-being for all at all ages.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #4
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Quality Education</strong>
+              Ensure inclusive and quality education for all and promote
+              lifelong learning.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #5
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Gender Equality</strong>
+              Achieve gender equality and empower all women and girls.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #6
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Clean Water and Sanitation</strong>
+              Ensure access to water and sanitation for all.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #7
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Affordable and Clean Energy</strong>
+              Ensure access to affordable, reliable, sustainable and modern
+              energy for all.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #8
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Decent Work and Economic Growth</strong>
+              Promote inclusive and sustainable economic growth, employment and
+              decent work for all.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #9
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Industry, Innovation and Infrastructure</strong>
+              Build resilient infrastructure, promote sustainable
+              industrialization and foster innovation.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #10
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Reduced Inequalities</strong>
+              Reduce inequality within and among countries.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #11
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Sustainable Cities and Communities</strong>
+              Make cities inclusive, safe, resilient and sustainable.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #12
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Responsible Consumption and Production</strong>
+              Ensure sustainable consumption and production patterns.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #13
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Climate Action</strong>
+              Take urgent action to combat climate change and its impacts.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #14
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Life below Water</strong>
+              Conserve and sustainably use the oceans, seas and marine
+              resources.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #15
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Life on Land</strong>
+              Sustainably manage forests, combat desertification, halt and
+              reverse land degradation, halt biodiversity loss.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #16
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Peace, Justice and Strong Institutions</strong>
+              Promote just, peaceful and inclusive societies.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseThree"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseThree"
+            >
+              Goal #17
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingThree"
+          >
+            <div class="accordion-body">
+              <strong>Partnerships for the Goals</strong>
+              Revitalize the global partnership for sustainable development.
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+    <!--right pannel-->
+    <div class="col-sm-6">
+      <div
+        id="wc"
+        class="carousel carousel-dark slide content-section"
+        data-bs-ride="carousel"
+      >
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#wc"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 0"
+          ></button>
+          {% for number in range(1,17) %}
+          <button
+            type="button"
+            data-bs-target="#wc"
+            data-bs-slide-to="{{number}}"
+            aria-label="Slide {{number}}"
+          ></button>
+          {% endfor %}
+        </div>
 
-      <!-- The slideshow -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="/static/images/wc1.png" alt="SDG1" />
-          <!--width="1100" height="500"-->
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="/static/images/wc1.png"
+              alt="SDG1"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 style="font-weight: bold">Goal 1</h3>
+            </div>
+          </div>
+          {% for number in range(2,18) %}
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="/static/images/wc{{number}}.png"
+              alt="SDG2"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3 style="font-weight: bold">Goal {{number}}</h3>
+            </div>
+          </div>
+          {% endfor %}
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="/static/images/wc2.png" alt="SDG2" />
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="/static/images/wc3.png" alt="SDG3" />
-        </div>
+
+        <!-- Left and right controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#wc"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#wc"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-
-      <!-- Left and right controls -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#wc"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#wc"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </div>
+</div>
+<div class="row justify-content-md-center content-section-transparent">
+  <h2 class="col-sm-12 text-white text-center">LINK TO THE OFFICIAL WEBSITE</h2>
+  <h2 class="col-sm-12 text-white text-center">LINK TO THE LAZY GUIDE</h2>
 </div>
 {% endblock %}

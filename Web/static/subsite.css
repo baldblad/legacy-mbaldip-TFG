@@ -47,6 +47,11 @@ text {
   margin-bottom: 20px;
 }
 
+.content-section-transparent {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
 .nav-pills .nav-link.active {
   background-color: rgb(93, 131, 161) !important;
 }
